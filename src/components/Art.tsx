@@ -1,10 +1,4 @@
 import React, { useState } from 'react'
-import makisekurisu1 from '../drawings/makisekurisu1.jpeg'
-import makisekurisu2 from '../drawings/makisekurisu2.jpeg'
-import makisekurisu3 from '../drawings/makisekurisu3.jpeg'
-import vladilena4 from '../drawings/vladilena4.jpeg'
-import vladilena5 from '../drawings/vladilena5.jpeg'
-import vladilena6 from '../drawings/vladilena6.jpeg'
 import './Art.scss'
 
 interface ArtPiece {
@@ -23,12 +17,12 @@ interface ArtPiece {
 // The placeholder is shown as a coloured gradient until images are added.
 // ──────────────────────────────────────────────────────────────────────────────
 const artPieces: ArtPiece[] = [
-  { id: 1, title: 'Makise Kurisu', medium: 'Digital Art', src: makisekurisu1, placeholder: 'linear-gradient(135deg, #1565c0, #00e5ff)' },
-  { id: 2, title: 'Makise Kurisu', medium: 'Digital Art', src: makisekurisu2, placeholder: 'linear-gradient(135deg, #0d2137, #2979ff)' },
-  { id: 3, title: 'Makise Kurisu', medium: 'Digital Art', src: makisekurisu3, placeholder: 'linear-gradient(135deg, #020b18, #448aff)' },
-  { id: 4, title: 'Vladilena Milizé', medium: 'Digital Art', src: vladilena4, placeholder: 'linear-gradient(135deg, #0a1929, #00e5ff)' },
-  { id: 5, title: 'Vladilena Milizé', medium: 'Digital Art', src: vladilena5, placeholder: 'linear-gradient(135deg, #0e3460, #80deea)' },
-  { id: 6, title: 'Vladilena Milizé', medium: 'Digital Art', src: vladilena6, placeholder: 'linear-gradient(135deg, #050f1f, #2979ff)' },
+  { id: 1, title: 'Makise Kurisu',    medium: 'Digital Art', src: './makisekurisu1.jpeg', placeholder: 'linear-gradient(135deg, #1565c0, #00e5ff)' },
+  { id: 2, title: 'Makise Kurisu',    medium: 'Digital Art', src: './makisekurisu2.jpeg', placeholder: 'linear-gradient(135deg, #0d2137, #2979ff)' },
+  { id: 3, title: 'Makise Kurisu',    medium: 'Digital Art', src: './makisekurisu3.jpeg', placeholder: 'linear-gradient(135deg, #020b18, #448aff)' },
+  { id: 4, title: 'Vladilena Milizé', medium: 'Digital Art', src: './vladilena4.jpeg',    placeholder: 'linear-gradient(135deg, #0a1929, #00e5ff)' },
+  { id: 5, title: 'Vladilena Milizé', medium: 'Digital Art', src: './vladilena5.jpeg',    placeholder: 'linear-gradient(135deg, #0e3460, #80deea)' },
+  { id: 6, title: 'Vladilena Milizé', medium: 'Digital Art', src: './vladilena6.jpeg',    placeholder: 'linear-gradient(135deg, #050f1f, #2979ff)' },
 ]
 
 const hobbies = [
