@@ -1,6 +1,6 @@
 # Alexander Radar — Personal Portfolio
 
-A personal portfolio website built to showcase my projects, experience, and digital artwork. Designed with a professional dark blue aesthetic that reflects my interest in both frontend development and visual design.
+A personal portfolio website built to showcase my projects and experience.
 
 🌐 **Live Site:** [aaradar.github.io/Alexander-Radar](https://aaradar.github.io/Alexander-Radar/)
 
