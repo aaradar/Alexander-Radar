@@ -10,7 +10,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'Genshin Impact Fan App',
+    title: 'Game Website',
     description:
       'Full-stack React fan web application for the game Genshin Impact featuring a type racer mini-game, information pages, and a live Firebase-backed user authentication system.',
     bullets: [
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     category: 'solo',
   },
   {
-    title: 'SEG3125 Portfolio — Case Studies',
+    title: 'Portfolio — Case Studies',
     description:
       'Academic portfolio React app for SEG3125 featuring in-depth case studies on UI/UX design projects developed throughout the term.',
     bullets: [
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     category: 'solo',
   },
   {
-    title: 'LEAF — Landscape Evolution & Forecasting',
+    title: 'Landscape Evolution & Forecasting Runner',
     description:
       'Remote-sensing pipeline system developed at NRC for satellite imagery analysis across Canada using Sentinel-2 data.',
     bullets: [
@@ -49,12 +49,12 @@ export const projects: Project[] = [
       'Converted to region dictionaries with spatial buffering & temporal windows',
       'Orchestration layer for Sentinel-2 satellite imagery pipeline',
     ],
-    tags: ['Python', 'Remote Sensing', 'Sentinel-2', 'KML', 'NRC'],
+    tags: ['Python', 'Remote Sensing', 'Sentinel-2', 'KML', 'NRCan'],
     github: 'https://github.com/aaradar/LEAF_runner',
     category: 'work',
   },
   {
-    title: 'Android Attendance Manager',
+    title: 'Event Attendance Manager System',
     description:
       'Group project Android app for event attendance management, built with Android Studio and Firebase for real-time cloud data.',
     bullets: [
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     category: 'group',
   },
   {
-    title: 'Hotel Management Website',
+    title: 'Hotel Management Website Database',
     description:
       'Full-stack hotel management system with Flask backend, React frontend, and an SQLite relational database for CSI2132.',
     bullets: [
