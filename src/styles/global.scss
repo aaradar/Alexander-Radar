@@ -1,0 +1,72 @@
+@use './variables' as *;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --navy-deep:   #{$navy-deep};
+  --navy-dark:   #{$navy-dark};
+  --navy-mid:    #{$navy-mid};
+  --navy-panel:  #{$navy-panel};
+  --blue-dark:   #{$blue-dark};
+  --blue-mid:    #{$blue-mid};
+  --blue-bright: #{$blue-bright};
+  --blue-glow:   #{$blue-glow};
+  --cyan-accent: #{$cyan-accent};
+  --cyan-soft:   #{$cyan-soft};
+  --white-pure:  #{$white-pure};
+  --white-dim:   #{$white-dim};
+  --white-muted: #{$white-muted};
+  --font-display: #{$font-display};
+  --font-mono:    #{$font-mono};
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: $navy-deep;
+  color: $white-dim;
+  font-family: $font-mono;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $cyan-accent;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  &:hover { opacity: 0.75; }
+}
+
+section {
+  padding: $section-pad 0;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+::selection {
+  background: $blue-bright;
+  color: $white-pure;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: $navy-dark;
+}
+::-webkit-scrollbar-thumb {
+  background: $blue-dark;
+  border-radius: 3px;
+}

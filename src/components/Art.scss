@@ -1,0 +1,273 @@
+@use '../styles/variables' as *;
+
+.art {
+  background: $navy-deep;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, $blue-dark, transparent);
+  }
+
+  // ── Hobbies row ──────────────────────────────────────────────────────────
+  &__hobbies {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  &__hobby {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: $navy-panel;
+    border: 1px solid $white-ghost;
+    border-radius: 10px;
+    padding: 0.55rem 1.1rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      border-color: rgba($cyan-accent, 0.35);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__hobby-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  &__hobby-label {
+    font-family: $font-mono;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $white-muted;
+  }
+
+  // ── Notice ───────────────────────────────────────────────────────────────
+  &__notice {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba($blue-bright, 0.07);
+    border: 1px solid rgba($blue-bright, 0.2);
+    border-radius: 8px;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.78rem;
+    color: $white-muted;
+    margin-bottom: 2.5rem;
+
+    code {
+      font-family: $font-mono;
+      color: $cyan-accent;
+      background: rgba($cyan-accent, 0.1);
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+    }
+  }
+
+  &__notice-icon {
+    color: $blue-glow;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  // ── Grid ─────────────────────────────────────────────────────────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+  }
+}
+
+// ── Art Card ──────────────────────────────────────────────────────────────────
+.art-card {
+  border-radius: $card-radius;
+  overflow: hidden;
+  background: $navy-panel;
+  border: 1px solid $white-ghost;
+  cursor: pointer;
+  transition: transform 0.25s $ease-out, box-shadow 0.25s ease, border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba($navy-deep, 0.7);
+    border-color: rgba($cyan-accent, 0.25);
+
+    .art-card__overlay { opacity: 1; }
+    .art-card__image img { transform: scale(1.04); }
+  }
+
+  &__image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s $ease-out;
+    }
+  }
+
+  &__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    span { font-size: 2.5rem; }
+
+    p {
+      font-family: $font-mono;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba($navy-deep, 0.55);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  &__zoom {
+    font-family: $font-mono;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $white-pure;
+    border: 1px solid rgba($white-pure, 0.4);
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+  }
+
+  &__info {
+    padding: 0.85rem 1rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $white-dim;
+    margin-bottom: 0.2rem;
+  }
+
+  &__medium {
+    font-family: $font-mono;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $cyan-accent;
+  }
+}
+
+// ── Lightbox ──────────────────────────────────────────────────────────────────
+.art-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba($navy-deep, 0.92);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.2s ease;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 760px;
+    width: 100%;
+    background: $navy-panel;
+    border: 1px solid rgba($blue-glow, 0.2);
+    border-radius: $card-radius;
+    overflow: hidden;
+    animation: scaleIn 0.25s $ease-out;
+
+    @keyframes scaleIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to   { transform: scale(1);    opacity: 1; }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    background: $white-ghost;
+    border: none;
+    color: $white-dim;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+
+    &:hover { background: rgba($white-pure, 0.15); }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  }
+
+  &__meta {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid $white-ghost;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1rem;
+    font-weight: 700;
+    color: $white-pure;
+    margin-bottom: 0.2rem;
+  }
+
+  &__medium {
+    font-family: $font-mono;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $cyan-accent;
+  }
+}

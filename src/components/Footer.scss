@@ -1,0 +1,38 @@
+@use '../styles/variables' as *;
+
+.footer {
+  background: $navy-dark;
+  border-top: 1px solid $white-ghost;
+  padding: 2rem 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__copy {
+    font-family: $font-mono;
+    font-size: 0.72rem;
+    color: $white-muted;
+    letter-spacing: 0.04em;
+  }
+
+  &__links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      font-family: $font-mono;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $white-muted;
+      transition: color 0.2s ease;
+
+      &:hover { color: $cyan-accent; opacity: 1; }
+    }
+  }
+}

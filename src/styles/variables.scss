@@ -1,0 +1,27 @@
+// ─── Colour Palette ───────────────────────────────────────────────────────────
+$navy-deep:    #020b18;
+$navy-dark:    #050f1f;
+$navy-mid:     #0a1929;
+$navy-panel:   #0d2137;
+$blue-dark:    #0e3460;
+$blue-mid:     #1565c0;
+$blue-bright:  #2979ff;
+$blue-glow:    #448aff;
+$cyan-accent:  #00e5ff;
+$cyan-soft:    #80deea;
+$white-pure:   #ffffff;
+$white-dim:    rgba(255,255,255,0.85);
+$white-muted:  rgba(255,255,255,0.5);
+$white-ghost:  rgba(255,255,255,0.12);
+$white-panel:  rgba(255,255,255,0.06);
+
+// ─── Typography ───────────────────────────────────────────────────────────────
+$font-display: 'Syne', sans-serif;
+$font-mono:    'Space Mono', monospace;
+
+// ─── Spacing ──────────────────────────────────────────────────────────────────
+$section-pad: 7rem;
+$card-radius:  16px;
+
+// ─── Transitions ──────────────────────────────────────────────────────────────
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
